@@ -29,7 +29,7 @@ function Header() {
 
   <header className=' lg:w-full h-19 py-3 fixed backdrop-blur-md bg-black/50 z-10'>
       <nav className='flex h-12 lg:h-16'>
-        <div className=" lg:mx-4 text-blue-900 blink lg:px-5 h-14 hover:cursor-pointer font-logo mx-2 text-3xl lg:text-4xl pt-3 "
+        <div className="mr-1 lg:mx-4 text-blue-900 blink lg:px-5 h-14 hover:cursor-pointer font-logo text-3xl lg:text-4xl pt-3 "
         onClick={()=>{
           navigate('/')
           const ele = document.getElementById('start')

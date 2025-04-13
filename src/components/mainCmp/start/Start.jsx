@@ -19,7 +19,7 @@ function Start() {
       <strong className=' opacity-20'>#START</strong>
       <span className='flex flex-wrap'>
         <strong className='lg:font-myxl text-6xl mb-13 w-full'>Hey, My name is<span className='text-blue-950'> Lokesh Dhariyal.</span> </strong>
-        <div className='lg:text-4xl text-2xl mb-7 w-full flex'>I am a  <TextTransition springConfig={presets.wobbly} className='font-azeeb text-blue-100 mx-2'>{dev[change%dev.length]}</TextTransition></div>
+        <div className='lg:text-4xl text-2xl mb-7 flex'>I am a<TextTransition springConfig={presets.wobbly} className='flex text-xl font-azeeb text-blue-100 pt-1 mx-2'>{dev[change%dev.length]}</TextTransition></div>
         <span className='font-light text-xl w-full opacity-40 text-blue-200'>
           I have 2+ years of experience as a coding enthusiast and 1+ years as a full stack developer working
           mostly with react and other js frameworks.
