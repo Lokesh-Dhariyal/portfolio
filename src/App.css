@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Underdog&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-underdog : "Underdog", system-ui;
+  --font-azeeb : "Edu AU VIC WA NT Arrows", cursive;
+  --font-logo : "Wallpoet", sans-serif;
+
+  --font-myxl : 3.561rem;
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat);
+}
+
+.font-underdog {
+  font-family: var(--font-underdog);
+}
+
+.font-azeeb {
+  font-family: var(--font-azeeb);
+}
+
+.font-logo {
+  font-family: var(--font-logo);
+}
+
+
+@keyframes blinking {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.blink {
+  animation: blinking 7s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.font-myxl {
+  font-size: var(--font-myxl);
+}
