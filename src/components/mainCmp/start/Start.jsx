@@ -15,7 +15,7 @@ function Start() {
   },[])
 
   return (
-    <div id='start' className='text-white w-10/11 h-181 lg:w-3/4 lg:h-dvh pt-30 lg:pt-60 mx-auto'>
+    <div id='start' className='text-white w-10/11 h-200 lg:w-3/4 lg:h-dvh pt-30 lg:pt-60 mx-auto'>
       <strong className=' opacity-20'>#START</strong>
       <span className='flex flex-wrap'>
         <strong className='lg:font-myxl text-6xl mb-13 w-full'>Hey, My name is<span className='text-blue-950'> Lokesh Dhariyal.</span> </strong>
