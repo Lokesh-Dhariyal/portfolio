@@ -17,7 +17,7 @@ function About() {
                   <strong className='ml-5 opacity-80 font-mono'>#Memory Game</strong>
 
                   <div className='w-5/6 h-85 mx-auto my-5 rounded-2xl hover:cursor-pointer shadow-xl shadow-[#1c1c1c]'>
-                      <img src="src\img\Pro1.PNG" alt="" className='object-fill w-full h-full rounded-2xl duration-500 hover:opacity-85 opacity-75'/>
+                      <img src="img\Pro1.PNG" alt="" className='object-fill w-full h-full rounded-2xl duration-500 hover:opacity-85 opacity-75'/>
                   </div>
 
                   <div className='opacity-60 font-mono w-6/7 mx-auto mb-5'>#This project is made using JavaScript and pure CSS, this was a tough project to think
@@ -42,7 +42,7 @@ function About() {
                   <strong className='ml-5 opacity-80 font-mono'>#Quote Generator</strong>
 
                   <div className='w-5/6 h-85 mx-auto my-5 rounded-2xl hover:cursor-pointer shadow-xl shadow-[#1c1c1c]'>
-                   <img src="src\img\Pro2.PNG" alt="" className='object-fill w-full h-full rounded-2xl duration-500 hover:opacity-85 opacity-75'/>
+                   <img src="img\Pro2.PNG" alt="" className='object-fill w-full h-full rounded-2xl duration-500 hover:opacity-85 opacity-75'/>
                   </div>
 
                   <div className='opacity-60 font-mono w-6/7 mx-auto mb-5'>#This project is made using JavaScript and pure CSS, this was a great project to learn about 
@@ -67,7 +67,7 @@ function About() {
                   <strong className='ml-5 opacity-80 font-mono'>#Password Generator</strong>
 
                   <div className='w-5/6 h-85 mx-auto my-5 rounded-2xl hover:cursor-pointer shadow-xl shadow-[#1c1c1c]'>
-                    <img src="src\img\Pro3.PNG" alt="" className='object-fill w-full h-full rounded-2xl duration-500 hover:opacity-85 opacity-75'/>
+                    <img src="img\Pro3.PNG" alt="" className='object-fill w-full h-full rounded-2xl duration-500 hover:opacity-85 opacity-75'/>
                   </div>
 
                   <div className='opacity-60 font-mono w-6/7 mx-auto mb-5'>#This project is made using JavaScript and pure CSS, this is
