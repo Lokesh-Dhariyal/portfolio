@@ -5,7 +5,7 @@ function SkillLayout({
   className=''
 }) {
 
-  const [skill,setSkill] = useState('EXPENGDING LIBERARY');
+  const [skill,setSkill] = useState('EXPANGDING LIBRARY');
 
   //bg-[#242938]
   return (
