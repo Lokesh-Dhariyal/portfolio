@@ -4,7 +4,7 @@ import TextTransition,{presets} from 'react-text-transition'
 
 function Start() {
 
-  const dev = ['FULLSTACK   DEVELOPER','FRONTEND   DEVELOPER','BACKEND   DEVELOPER','ENGINEER']
+  const dev = ['FULLSTACK   DEVELOPER','PROGRAMMER','WEB   DEVELOPER','ENGINEER']
   const [change,setChange] = useState(0)
 
   useEffect(()=>{
