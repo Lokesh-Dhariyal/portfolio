@@ -7,22 +7,31 @@ import { useRef } from 'react';
 
 function ContactMe() {
   
-    const [email, setEmail] = useState("");
-    const form = useRef();
+  const [email, setEmail] = useState("");
+  const [time,setTime] = useState(5);
+  const form = useRef();
+  const btnref = useRef(null);
+
+    const gayab = ()=>{
+      btnref.current.disabled = true;
+      setTimeout(()=>{
+        btnref.current.disabled = false;
+      },5000)
+    }
 
      const sendEmail = (e) => {
       e.preventDefault();
 
     const messageField = form.current.message.value;
     if (!validate(email)) {
-      toast.error("Please provide a valid email address", {
+      toast.error('Please provide a valid email address (wait 5sec)', {
         position: "top-center",
         duration: 4000,
       });
       return;
     }
     if (messageField.trim() === "") {
-      toast.error("Message field cannot be empty", {
+      toast.promise("Message field cannot be empty (wait 5sec)", {
         position: "top-center",
         duration: 4000,
       });
@@ -35,21 +44,26 @@ function ContactMe() {
       )
       .then(
         () => {
-          toast.success("Message sent successfully!", {
-            position: "top-center",
-            duration: 4000,
-          });
+        const promise = () => new Promise((resolve) => setTimeout(() => resolve(), 2000));
+        toast.promise(promise, {
+          loading: 'Loading...',
+          position : 'top-center',
+          success: () => {
+          return 'Email Sent';
+          },
+          error: 'Error',
+        });
           form.current.reset();
           setEmail("");
         },
         (error) => {
           console.error("EmailJS Error:", error);
-          toast.error(`Error: ${error.text || "Failed to send message"}`, {
+          toast.error(`Error: ${error.text || "Failed to send message (wait 5sec)"}`, {
           position: "top-center",
           duration: 4000,
        });
-}
-      );
+        }
+       );
   };
 
   return (
@@ -68,7 +82,10 @@ function ContactMe() {
                 <label htmlFor="message" className='mx-2 text-2xl font-mono' >Message :</label><br />
                 <input name='message' type="text" id='message' placeholder='type something...' className='border-blue-900 bg-[#101420] text-[#c4c4c4] mx-2 mb-5 p-2 text-2xl font-mono rounded-xl lg:w-1/2 h-fit'/><br />
 
-                <ContactBtn type='submit' onClick={(e)=>sendEmail(e)}/>
+                <ContactBtn ref={btnref} type='submit' onClick={(e)=>{
+                  gayab()
+                  sendEmail(e)             
+                }}/>
             </form>
         </div>
     </div>

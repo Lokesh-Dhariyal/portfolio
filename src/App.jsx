@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <Toaster richColors/>
+      <Toaster richColors closeButton/>
       <Header/>
       <div className='absolute w-full h-fit'>
         <Start/>
