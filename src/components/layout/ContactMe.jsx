@@ -8,7 +8,6 @@ import { useRef } from 'react';
 function ContactMe() {
   
   const [email, setEmail] = useState("");
-  const [time,setTime] = useState(5);
   const form = useRef();
   const btnref = useRef(null);
 
@@ -38,12 +37,18 @@ function ContactMe() {
       return;
     }
 
-        emailjs.sendForm("service_zqr0nn9","template_cvwfdei",form.current,{
-          publicKey: "RXK_CB5VdrChW5f0J"
-        }
-      )
+    emailjs.sendForm(
+      "service_zqr0nn9",
+      "template_cvwfdei",
+      form.current,
+      import.meta.env.VITE_PUBLIC_KEY // ✅ Directly as the 4th parameter
+    )    
       .then(
         () => {
+        btnref.current.innerText = "Sending..."
+        setTimeout(() => {
+          btnref.current.innerText = "Contact Me"
+        }, 2000);
         const promise = () => new Promise((resolve) => setTimeout(() => resolve(), 2000));
         toast.promise(promise, {
           loading: 'Loading...',
@@ -63,7 +68,7 @@ function ContactMe() {
           duration: 4000,
        });
         }
-       );
+       )
   };
 
   return (

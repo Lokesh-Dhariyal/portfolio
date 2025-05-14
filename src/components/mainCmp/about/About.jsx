@@ -6,9 +6,11 @@ function About() {
   const content1 = 'This project is made using JavaScript and pure CSS, this was a tough project to think and actually implement.'
   const content2 = 'This project is made using JavaScript and pure CSS, this was a great project to learn about api and how to use them.'
   const content3  = 'This project is made using JavaScript and pure CSS, this is a great project to learn about how to use good js.'
+  const content4 = 'This project is made using react and Tailwind, i learned about the context api usecase and also react core.'
   const p1link = 'https://rokeshu-project4.vercel.app/'
   const p2link = 'https://rokeshu-project2.vercel.app/'
   const p3link = 'https://rokeshu-project3.vercel.app/'
+  const p4link = 'https://lokesh-todo.vercel.app/'
   return (
     <div id='project' className='text-white'>
       <div className='-z-10 inset-0 h-fit w-full 
@@ -45,7 +47,15 @@ function About() {
                   icon1 = 'https://skillicons.dev/icons?i=html'
                   icon2 = 'https://skillicons.dev/icons?i=css'
                   icon3 = 'https://skillicons.dev/icons?i=js'
-
+                  />
+                  <BoxLayout className='relative overflow-auto'
+                  link = {p4link}
+                  proj = 'img/Pro4.png'
+                  title = '#Todo Manager' 
+                  content = {content4}
+                  icon1 = 'https://skillicons.dev/icons?i=js'
+                  icon2 = 'https://skillicons.dev/icons?i=tailwind'
+                  icon3 = 'https://skillicons.dev/icons?i=react'
                   />
               </div>
           </div>
