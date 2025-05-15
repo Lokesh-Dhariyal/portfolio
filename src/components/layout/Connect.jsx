@@ -16,7 +16,7 @@ function Connect() {
                 <img src="https://skillicons.dev/icons?i=github" alt="img" className='w-full h-full'/>
             </div>
             <div className='aspect-square gap-2 hover:cursor-pointer bg-white rounded-md lg:rounded-2xl' onClick={
-                ()=>window.open('','_blank')
+                ()=>window.open('https://x.com/lokesh_dhariyal','_blank')
             }>
                 <img src="img\icons8-x-logo-50.png" alt="img" className=' w-full h-full rounded-2xl'/>
             </div>
