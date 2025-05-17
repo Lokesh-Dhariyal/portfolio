@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import {useState} from 'react'
 import { toast } from 'sonner'
 import { validate } from 'react-email-validator'
 import ContactBtn from './ContactBtn'
@@ -78,14 +78,14 @@ function ContactMe() {
         </div>
         <div className='border-2 border-blue-900 w-28/29 mx-auto mt-2 h-fit pt-10 px-5 rounded-2xl'>
             <form ref={form} onSubmit={sendEmail}>
-                <label htmlFor="name" className='mx-2 text-2xl font-mono' >Name :</label><br />
-                <input name ='user_name' type="text" id='name' placeholder='name' className='border-blue-900 bg-[#101420] text-[#c4c4c4] mx-2 mb-5 p-2 text-2xl font-mono rounded-xl lg:w-1/2'/><br />
+                <label htmlFor="name" className='mx-2 text-3xl lg:text-2xl font-mono' >Name :</label><br />
+                <input name ='user_name' type="text" id='name' placeholder='name' className='border-blue-900 bg-[#101420] text-[#c4c4c4] mx-2 mb-5 p-2 text-3xl lg:text-2xl font-mono rounded-xl w-10/11 lg:w-1/2'/><br />
 
-                <label htmlFor="email" className='mx-2 text-2xl font-mono'>Email :</label><br />
+                <label htmlFor="email" className='mx-2 text-3xl lg:text-2xl font-mono'>Email :</label><br />
                 <input  onChange={(e)=>setEmail(e.target.value)}  name='user_email' type="email" id='email' placeholder='email' className='border-blue-900 bg-[#101420] text-[#c4c4c4] mx-2 mb-5 p-2 text-2xl font-mono rounded-xl lg:w-1/2'/><br />
 
-                <label htmlFor="message" className='mx-2 text-2xl font-mono' >Message :</label><br />
-                <input name='message' type="text" id='message' placeholder='type something...' className='border-blue-900 bg-[#101420] text-[#c4c4c4] mx-2 mb-5 p-2 text-2xl font-mono rounded-xl lg:w-1/2 h-fit'/><br />
+                <label htmlFor="message" className='mx-2 text-3xl lg:text-2xl font-mono' >Message :</label><br />
+                <input name='message' type="text" id='message' placeholder='type something...' className='border-blue-900 bg-[#101420] text-[#c4c4c4] mx-2 mb-5 p-2 text-3xl lg:text-2xl font-mono rounded-xl w-10/11 lg:w-1/2 h-fit'/><br />
 
                 <ContactBtn ref={btnref} type='submit' onClick={(e)=>{
                   gayab()

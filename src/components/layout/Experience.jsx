@@ -1,5 +1,3 @@
-import React from 'react'
-
 function Experience() {
   return (
     <div className='w-28/29 lg:w-3/4 h-fit mx-auto'>

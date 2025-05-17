@@ -1,4 +1,3 @@
-import React from 'react'
 import {Experience, SkillLayout} from '../../index'
 function Exp() {
   return (

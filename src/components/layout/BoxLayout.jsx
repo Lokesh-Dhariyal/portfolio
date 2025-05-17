@@ -1,5 +1,3 @@
-import React from 'react'
-
 function BoxLayout({
     children,
     className="",
@@ -16,15 +14,15 @@ function BoxLayout({
                         <div className='opacity-60 font-mono w-6/7 mx-auto mb-5'>{props.content}</div>
       
       
-                        <div className='w-1/5 aspect-square ml-10 relative'>
-                          <div className='rounded-full absolute w-3/7 h-3/7 left-2'>
-                            <img src={props.icon1} alt="img" className='object-cover w-full h-full'/>
+                        <div className='w-fit mb-3 ml-6 flex gap-0.5'>
+                          <div className='lg:w-1/3 w-1/4'>
+                            <img src={props.icon1} alt="img" className='rounded-full object-cover w-full h-full'/>
                           </div>
-                          <div className='rounded-full z-1 absolute w-3/7 h-3/7 left-9'>
-                            <img src={props.icon2} alt="img" className='object-cover w-full h-full'/>
+                          <div className='z-1 lg:w-1/3 w-1/4 left-7'>
+                            <img src={props.icon2} alt="img" className='rounded-full object-cover w-full h-full'/>
                           </div>
-                          <div className='rounded-full z-2 absolute w-3/7 h-3/7 left-16'>
-                            <img src={props.icon3} alt="img" className='object-cover w-full h-full'/>
+                          <div className='z-2 lg:w-1/3 w-1/4 left-14'>
+                            <img src={props.icon3} alt="img" className='rounded-full object-cover w-full h-full'/>
                           </div>
                         </div>
     </div>
