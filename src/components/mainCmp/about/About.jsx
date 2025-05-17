@@ -15,7 +15,7 @@ function About() {
       <div className='-z-10 inset-0 h-fit w-full 
       bg-[linear-gradient(to_right,#1c398e38_1px,transparent_1px),linear-gradient(to_bottom,#1c398e38_1px,transparent_1px)] 
       bg-[size:20px_20px] overflow-auto'>
-          <div className='lg:w-3/4 w-28/29 mx-auto h-fit mt-22'>
+          <div className='lg:w-3/4 w-28/29 mx-auto h-fit mt-18 lg:mt-22'>
           <strong className='opacity-20'>#PROJECT</strong>
             <div className='border-3 border-blue-900 bg-[#101420] text-[#c4c4c4] rounded-full w-1/2 lg:w-1/4 h-fit mx-auto text-center font-bold mb-5 font-mono text-2xl '>My Projects</div>
               <div className='lg:grid grid-cols-2 gap-5 '>

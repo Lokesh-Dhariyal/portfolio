@@ -8,7 +8,7 @@ function SkillLayout({
 
   //bg-[#242938]
   return (
-    <div className={`w-28/29 lg:w-3/4 h-fit mx-auto pt-22 ${className} `}>
+    <div className={`w-28/29 lg:w-3/4 h-fit mx-auto pt-18 lg:pt-22 ${className} `}>
       <strong className=' opacity-20 text-white'>#INSIGHT</strong>
 
       <div className=' bg-[#101420] border-2 border-blue-900 text-2xl text-center lg:text-3xl w-full lg:w-1/2 h-fit mx-auto rounded-3xl px-3 lg:px-17 py-2 font-bold font-mono text-[#c4c4c4] opacity-95'>
