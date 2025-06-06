@@ -48,8 +48,8 @@ function SkillLayout({
         </div>
 
         <div className='border-2 border-blue-900 w-1/4 h-18 lg:h-22 rounded-3xl bg-[#101420]'
-          onClick={()=>setTimeout(() => setSkill('MONGOOSE'), 200)}
-          onMouseEnter={()=>setTimeout(() => setSkill('MONGOOSE'), 200)}
+          onClick={()=>setTimeout(() => setSkill('MONGODB'), 200)}
+          onMouseEnter={()=>setTimeout(() => setSkill('MONGODB'), 200)}
           onMouseLeave={()=>setTimeout(() => setSkill('EXPENDING LIBRARY'), 200)}>
           <img src="https://skillicons.dev/icons?i=mongodb" alt="some-img" className='w-full h-full p-2 lg:p-1'/>
         </div>
@@ -88,6 +88,20 @@ function SkillLayout({
           onMouseLeave={()=>setTimeout(() => setSkill('EXPENDING LIBRARY'), 200)}>
           <img src="https://skillicons.dev/icons?i=nodejs" alt="some-img" className='w-full h-full p-2 lg:p-1'/>
         </div>
+
+        <div className='border-2 border-blue-900 w-1/4 h-18 lg:h-22 rounded-3xl bg-[#101420]'
+          onClick={()=>setTimeout(() => setSkill('EXPRESS'), 200)}
+          onMouseEnter={()=>setTimeout(() => setSkill('EXPRESS'), 200)}
+          onMouseLeave={()=>setTimeout(() => setSkill('EXPENDING LIBRARY'), 200)}>
+          <img src="https://skillicons.dev/icons?i=express" alt="some-img" className='w-full h-full p-2 lg:p-1'/>
+        </div>
+
+        {/* <div className='border-2 border-blue-900 w-1/4 h-18 lg:h-22 rounded-3xl bg-[#101420]'
+          onClick={()=>setTimeout(() => setSkill('EXPRESS'), 200)}
+          onMouseEnter={()=>setTimeout(() => setSkill('EXPRESS'), 200)}
+          onMouseLeave={()=>setTimeout(() => setSkill('EXPENDING LIBRARY'), 200)}>
+          <img src="https://skillicons.dev/icons?i=axios" alt="some-img" className='w-full h-full p-2 lg:p-1'/>
+        </div> */}
       </div>
     </div>
   )

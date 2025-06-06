@@ -6,10 +6,12 @@ function About() {
   const content2 = 'This project is made using JavaScript and pure CSS, this was a great project to learn about API.'
   const content3  = 'This project is made using JavaScript and pure CSS, this is a great project to learn about how to use good js.'
   const content4 = 'This project is made using react and Tailwind, i learned about the context api usecase and also react core.'
+  const content5 = 'Full Stack project, made using react, axios and tailwind in frontend and mongoose, mongodb, express in backend'
   const p1link = 'https://rokeshu-project4.vercel.app/'
   const p2link = 'https://rokeshu-project2.vercel.app/'
   const p3link = 'https://rokeshu-project3.vercel.app/'
   const p4link = 'https://lokesh-todo.vercel.app/'
+  const p5link = 'https://staticgram.vercel.app/'
   return (
     <div id='project' className='text-white'>
       <div className='-z-10 inset-0 h-fit w-full 
@@ -21,19 +23,19 @@ function About() {
               <div className='lg:grid grid-cols-2 gap-5 '>
     
                 <BoxLayout className='relative overflow-auto'
+                link = {p5link}
+                proj = 'img/Pro5.png'
+                title = '#Staticgram(Social media)' 
+                content = {content5}
+                icon1 = 'https://skillicons.dev/icons?i=react'
+                icon2 = 'https://skillicons.dev/icons?i=express'
+                icon3 = 'https://skillicons.dev/icons?i=mongodb'
+                />
+                <BoxLayout className='relative overflow-auto'
                   link = {p1link}
                   proj = 'img/Pro1.PNG'
                   title = '#Memory Game' 
                   content = {content1}
-                  icon1 = 'https://skillicons.dev/icons?i=html'
-                  icon2 = 'https://skillicons.dev/icons?i=css'
-                  icon3 = 'https://skillicons.dev/icons?i=js'
-                  />
-                  <BoxLayout className='relative overflow-auto'
-                  link = {p2link}
-                  proj = 'img/Pro2.PNG'
-                  title = '#Quote Generator' 
-                  content = {content2}
                   icon1 = 'https://skillicons.dev/icons?i=html'
                   icon2 = 'https://skillicons.dev/icons?i=css'
                   icon3 = 'https://skillicons.dev/icons?i=js'
@@ -55,6 +57,15 @@ function About() {
                   icon1 = 'https://skillicons.dev/icons?i=js'
                   icon2 = 'https://skillicons.dev/icons?i=tailwind'
                   icon3 = 'https://skillicons.dev/icons?i=react'
+                  />
+                  <BoxLayout className='relative overflow-auto'
+                  link = {p2link}
+                  proj = 'img/Pro2.PNG'
+                  title = '#Quote Generator' 
+                  content = {content2}
+                  icon1 = 'https://skillicons.dev/icons?i=html'
+                  icon2 = 'https://skillicons.dev/icons?i=css'
+                  icon3 = 'https://skillicons.dev/icons?i=js'
                   />
               </div>
           </div>
