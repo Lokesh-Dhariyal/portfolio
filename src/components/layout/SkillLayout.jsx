@@ -1,109 +1,78 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 
-function SkillLayout({
-  className=''
-}) {
+function SkillLayout({ className = '' }) {
+  const [skill, setSkill] = useState('EXPANDING LIBRARY')
 
-  const [skill,setSkill] = useState('EXPANGDING LIBRARY');
+  const skills = [
+    { name: 'REACT', icon: 'react' },
+    { name: 'JAVASCRIPT', icon: 'js' },
+    { name: 'TAILWIND', icon: 'tailwind' },
+    { name: 'GIT', icon: 'git' },
+    { name: 'MONGODB', icon: 'mongodb' },
+    { name: 'C++', icon: 'cpp' },
+    { name: 'GITHUB', icon: 'github' },
+    { name: 'NEXT.JS', icon: 'nextjs' },
+    { name: 'VSCODE', icon: 'vscode' },
+    { name: 'NODE.JS', icon: 'nodejs' },
+    { name: 'EXPRESS', icon: 'express' }
+  ]
 
-  //bg-[#242938]
+  const fadeIn = {
+    hidden: { opacity: 0, y: 30 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: 'easeOut',
+        staggerChildren: 0.1
+      }
+    }
+  }
+
   return (
-    <div className={`w-28/29 lg:w-3/4 h-fit mx-auto pt-18 lg:pt-22 ${className} `}>
-      <strong className=' opacity-20 text-white'>#INSIGHT</strong>
+      <div className={`lg:w-4/5 h-fit mt-5 lg:mt-10 ${className}`}>
+      <motion.div
+        className='bg-[#101420] border-2 border-blue-900 text-2xl text-center lg:text-3xl w-fit h-fit mx-auto rounded-3xl px-3 lg:px-17 py-2 font-bold font-mono text-[#c4c4c4] opacity-95'
+        layout
+        variants={fadeIn}
+      >
+        Solving real problems with
+        <motion.div
+          key={skill}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className='font-azeeb text-center text-xl lg:text-2xl mt-1 text-blue-200'
+        >
+          {skill}
+        </motion.div>
+      </motion.div>
 
-      <div className=' bg-[#101420] border-2 border-blue-900 text-2xl text-center lg:text-3xl w-full lg:w-1/2 h-fit mx-auto rounded-3xl px-3 lg:px-17 py-2 font-bold font-mono text-[#c4c4c4] opacity-95'>
-        Solving real problems with 
-        <br></br>
-        <div className='font-azeeb text-center text-xl lg:text-2xl mt-1'> {skill}</div> 
+      <motion.div
+        className='flex w-full h-fit flex-wrap mx-auto mt-10 justify-center gap-2 lg:gap-3'
+        variants={fadeIn}
+      >
+        {skills.map(({ name, icon }) => (
+          <motion.div
+            key={name}
+            className='border-2 border-blue-900 w-1/4 h-18 lg:h-22 rounded-3xl bg-[#101420] hover:cursor-pointer'
+            variants={fadeIn}
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+            onMouseEnter={() => setSkill(name)}
+            onMouseLeave={() => setSkill('EXPANDING LIBRARY')}
+          >
+            <img
+              src={`https://skillicons.dev/icons?i=${icon}`}
+              alt={name}
+              className='w-full h-full p-2 lg:p-1'
+            />
+          </motion.div>
+        ))}
+      </motion.div>
       </div>
-
-      <div className='flex lg:w-3/4 h-fit flex-wrap mx-auto mt-10 justify-center-safe gap-2 lg:gap-3' >
-
-        <div className='border-2 border-blue-900 w-1/4 h-18 lg:h-22 rounded-3xl bg-[#101420]'
-          onClick={()=>setTimeout(() => setSkill('REACT'), 200)}
-          onMouseEnter={()=>setTimeout(() => setSkill('REACT'), 200)}
-          onMouseLeave={()=>setTimeout(() => setSkill('EXPENDING LIBRARY'), 200)}>
-          <img src="https://skillicons.dev/icons?i=react" alt="some-img" className='w-full h-full p-2 lg:p-1'/>
-        </div>
-
-        <div className='border-2 border-blue-900 w-1/4 h-18 lg:h-22 rounded-3xl bg-[#101420]'
-          onClick={()=>setTimeout(() => setSkill('JAVASCRIPT'), 200)}
-          onMouseEnter={()=>setTimeout(() => setSkill('JAVASCRIPT'), 200)}
-          onMouseLeave={()=>setTimeout(() => setSkill('EXPENDING LIBRARY'), 200)}>
-          <img src="https://skillicons.dev/icons?i=js" alt="some-img" className='w-full h-full p-2 lg:p-1'/>
-        </div>
-
-        <div className='border-2 border-blue-900 w-1/4 h-18 lg:h-22 rounded-3xl bg-[#101420]'
-          onClick={()=>setTimeout(() => setSkill('TAILWIND'), 200)}
-          onMouseEnter={()=>setTimeout(() => setSkill('TAILWIND'), 200)}
-          onMouseLeave={()=>setTimeout(() => setSkill('EXPENDING LIBRARY'), 200)}>
-          <img src="https://skillicons.dev/icons?i=tailwind" alt="some-img" className='w-full h-full p-2 lg:p-1'/>
-        </div>
-
-        <div className='border-2 border-blue-900 w-1/4 h-18 lg:h-22 rounded-3xl bg-[#101420]'
-          onClick={()=>setTimeout(() => setSkill('GIT'), 200)}
-          onMouseEnter={()=>setTimeout(() => setSkill('GIT'), 200)}
-          onMouseLeave={()=>setTimeout(() => setSkill('EXPENDING LIBRARY'), 200)}>
-          <img src="https://skillicons.dev/icons?i=git" alt="some-img" className='w-full h-full p-2 lg:p-1'/>
-        </div>
-
-        <div className='border-2 border-blue-900 w-1/4 h-18 lg:h-22 rounded-3xl bg-[#101420]'
-          onClick={()=>setTimeout(() => setSkill('MONGODB'), 200)}
-          onMouseEnter={()=>setTimeout(() => setSkill('MONGODB'), 200)}
-          onMouseLeave={()=>setTimeout(() => setSkill('EXPENDING LIBRARY'), 200)}>
-          <img src="https://skillicons.dev/icons?i=mongodb" alt="some-img" className='w-full h-full p-2 lg:p-1'/>
-        </div>
-
-        <div className='border-2 border-blue-900 w-1/4 h-18 lg:h-22 rounded-3xl bg-[#101420]'
-          onClick={()=>setTimeout(() => setSkill('C++'), 200)}
-          onMouseEnter={()=>setTimeout(() => setSkill('C++'), 200)}
-          onMouseLeave={()=>setTimeout(() => setSkill('EXPENDING LIBRARY'), 200)}>
-          <img src="https://skillicons.dev/icons?i=cpp" alt="some-img" className='w-full h-full p-2 lg:p-1'/>
-        </div>
-
-        <div className='border-2 border-blue-900 w-1/4 h-18 lg:h-22 rounded-3xl bg-[#101420]'
-          onClick={()=>setTimeout(() => setSkill('GITHUB'), 200)}
-          onMouseEnter={()=>setTimeout(() => setSkill('GITHUB'), 200)}
-          onMouseLeave={()=>setTimeout(() => setSkill('EXPENDING LIBRARY'), 200)}>
-          <img src="https://skillicons.dev/icons?i=github" alt="some-img" className='w-full h-full p-2 lg:p-1'/>
-        </div>
-
-        <div className='border-2 border-blue-900 w-1/4 h-18 lg:h-22 rounded-3xl bg-[#101420]'
-          onClick={()=>setTimeout(() => setSkill('NEXT.JS'), 200)}
-          onMouseEnter={()=>setTimeout(() => setSkill('NEXT.JS'), 200)}
-          onMouseLeave={()=>setTimeout(() => setSkill('EXPENDING LIBRARY'), 200)}>
-          <img src="https://skillicons.dev/icons?i=nextjs" alt="some-img" className='w-full h-full p-2 lg:p-1'/>
-        </div>
-
-        <div className='border-2 border-blue-900 w-1/4 h-18 lg:h-22 rounded-3xl bg-[#101420]'
-          onClick={()=>setTimeout(() => setSkill('VSCODE'), 200)}
-          onMouseEnter={()=>setTimeout(() => setSkill('VSCODE'), 200)}
-          onMouseLeave={()=>setTimeout(() => setSkill('EXPENDING LIBRARY'), 200)}>
-          <img src="https://skillicons.dev/icons?i=vscode" alt="some-img" className='w-full h-full p-2 lg:p-1'/>
-        </div>
-
-        <div className='border-2 border-blue-900 w-1/4 h-18 lg:h-22 rounded-3xl bg-[#101420]'
-          onClick={()=>setTimeout(() => setSkill('NODE.JS'), 200)}
-          onMouseEnter={()=>setTimeout(() => setSkill('NODE.JS'), 200)}
-          onMouseLeave={()=>setTimeout(() => setSkill('EXPENDING LIBRARY'), 200)}>
-          <img src="https://skillicons.dev/icons?i=nodejs" alt="some-img" className='w-full h-full p-2 lg:p-1'/>
-        </div>
-
-        <div className='border-2 border-blue-900 w-1/4 h-18 lg:h-22 rounded-3xl bg-[#101420]'
-          onClick={()=>setTimeout(() => setSkill('EXPRESS'), 200)}
-          onMouseEnter={()=>setTimeout(() => setSkill('EXPRESS'), 200)}
-          onMouseLeave={()=>setTimeout(() => setSkill('EXPENDING LIBRARY'), 200)}>
-          <img src="https://skillicons.dev/icons?i=express" alt="some-img" className='w-full h-full p-2 lg:p-1'/>
-        </div>
-
-        {/* <div className='border-2 border-blue-900 w-1/4 h-18 lg:h-22 rounded-3xl bg-[#101420]'
-          onClick={()=>setTimeout(() => setSkill('EXPRESS'), 200)}
-          onMouseEnter={()=>setTimeout(() => setSkill('EXPRESS'), 200)}
-          onMouseLeave={()=>setTimeout(() => setSkill('EXPENDING LIBRARY'), 200)}>
-          <img src="https://skillicons.dev/icons?i=axios" alt="some-img" className='w-full h-full p-2 lg:p-1'/>
-        </div> */}
-      </div>
-    </div>
   )
 }
 

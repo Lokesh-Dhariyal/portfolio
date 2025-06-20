@@ -1,99 +1,159 @@
-import {useState} from 'react'
+import { useState, useRef } from 'react'
 import { toast } from 'sonner'
 import { validate } from 'react-email-validator'
 import ContactBtn from './ContactBtn'
-import emailjs from '@emailjs/browser';
-import { useRef } from 'react';
+import emailjs from '@emailjs/browser'
+import { motion } from 'framer-motion'
 
 function ContactMe() {
-  
-  const [email, setEmail] = useState("");
-  const form = useRef();
-  const btnref = useRef(null);
+  const [email, setEmail] = useState("")
+  const form = useRef()
+  const btnref = useRef(null)
 
-    const gayab = ()=>{
-      btnref.current.disabled = true;
-      setTimeout(()=>{
-        btnref.current.disabled = false;
-      },5000)
-    }
+  const gayab = () => {
+    btnref.current.disabled = true
+    setTimeout(() => {
+      btnref.current.disabled = false
+    }, 5000)
+  }
 
-     const sendEmail = (e) => {
-      e.preventDefault();
+  const sendEmail = (e) => {
+    e.preventDefault()
 
-    const messageField = form.current.message.value;
+    const messageField = form.current.message.value
     if (!validate(email)) {
       toast.error('Please provide a valid email address (wait 5sec)', {
         position: "top-center",
         duration: 4000,
-      });
-      return;
+      })
+      return
     }
+
     if (messageField.trim() === "") {
       toast.promise("Message field cannot be empty (wait 5sec)", {
         position: "top-center",
         duration: 4000,
-      });
-      return;
+      })
+      return
     }
 
     emailjs.sendForm(
       "service_zqr0nn9",
       "template_cvwfdei",
       form.current,
-      import.meta.env.VITE_PUBLIC_KEY // ✅ Directly as the 4th parameter
-    )    
-      .then(
-        () => {
+      import.meta.env.VITE_PUBLIC_KEY
+    )
+      .then(() => {
         btnref.current.innerText = "Sending..."
         setTimeout(() => {
           btnref.current.innerText = "Contact Me"
-        }, 2000);
-        const promise = () => new Promise((resolve) => setTimeout(() => resolve(), 2000));
+        }, 2000)
+
+        const promise = () => new Promise((resolve) => setTimeout(resolve, 2000))
         toast.promise(promise, {
           loading: 'Loading...',
-          position : 'top-center',
-          success: () => {
-          return 'Email Sent';
-          },
+          position: 'top-center',
+          success: () => 'Email Sent',
           error: 'Error',
-        });
-          form.current.reset();
-          setEmail("");
-        },
-        (error) => {
-          console.error("EmailJS Error:", error);
-          toast.error(`Error: ${error.text || "Failed to send message (wait 5sec)"}`, {
+        })
+
+        form.current.reset()
+        setEmail("")
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error)
+        toast.error(`Error: ${error.text || "Failed to send message (wait 5sec)"}`, {
           position: "top-center",
           duration: 4000,
-       });
-        }
-       )
-  };
+        })
+      })
+  }
+
+  const fadeIn = {
+    hidden: { opacity: 0, y: 30 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.7,
+        ease: 'easeOut',
+        staggerChildren: 0.2,
+      },
+    },
+  }
 
   return (
-    <div className='lg:w-5/6 mx-auto mt-1 h-fit'>
-        <div className='border-2 w-1/2 lg:w-1/3 ml-4 h-10 rounded-full border-blue-900 bg-[#101420] text-[#c4c4c4] pl-5 font-mono'>
-            <strong className='text-2xl lg:text-3xl font-mono'>Contact Me</strong>
-        </div>
-        <div className='border-2 border-blue-900 w-28/29 mx-auto mt-2 h-fit pt-10 px-5 rounded-2xl'>
-            <form ref={form} onSubmit={sendEmail}>
-                <label htmlFor="name" className='mx-2 text-3xl lg:text-2xl font-mono' >Name :</label><br />
-                <input name ='user_name' type="text" id='name' placeholder='name' className='border-blue-900 bg-[#101420] text-[#c4c4c4] mx-2 mb-5 p-2 text-3xl lg:text-2xl font-mono rounded-xl w-10/11 lg:w-1/2'/><br />
+    <motion.div
+      className='lg:w-5/6 mx-auto mt-1 h-fit'
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.3 }}
+      variants={fadeIn}
+    >
+      <motion.div
+        className='border-2 w-1/2 lg:w-1/3 ml-4 h-10 rounded-full border-blue-900 bg-[#101420] text-[#c4c4c4] pl-5 font-mono'
+        variants={fadeIn}
+      >
+        <strong className='text-2xl lg:text-3xl font-mono'>Contact Me</strong>
+      </motion.div>
 
-                <label htmlFor="email" className='mx-2 text-3xl lg:text-2xl font-mono'>Email :</label><br />
-                <input  onChange={(e)=>setEmail(e.target.value)}  name='user_email' type="email" id='email' placeholder='email' className='border-blue-900 bg-[#101420] text-[#c4c4c4] mx-2 mb-5 p-2 text-2xl font-mono rounded-xl lg:w-1/2'/><br />
+      <motion.div
+        className='border-2 border-blue-900 w-28/29 mx-auto mt-2 h-fit pt-10 px-5 rounded-2xl'
+        variants={fadeIn}
+      >
+        <form ref={form} onSubmit={sendEmail}>
+          <motion.label
+            htmlFor="name"
+            className='mx-2 text-3xl lg:text-2xl font-mono'
+            variants={fadeIn}
+          >Name :</motion.label><br />
+          <motion.input
+            name='user_name'
+            type="text"
+            id='name'
+            placeholder='name'
+            className='border-blue-900 bg-[#101420] text-[#c4c4c4] mx-2 mb-5 p-2 text-3xl lg:text-2xl font-mono rounded-xl w-10/11 lg:w-1/2'
+            variants={fadeIn}
+          /><br />
 
-                <label htmlFor="message" className='mx-2 text-3xl lg:text-2xl font-mono' >Message :</label><br />
-                <input name='message' type="text" id='message' placeholder='type something...' className='border-blue-900 bg-[#101420] text-[#c4c4c4] mx-2 mb-5 p-2 text-3xl lg:text-2xl font-mono rounded-xl w-10/11 lg:w-1/2 h-fit'/><br />
+          <motion.label
+            htmlFor="email"
+            className='mx-2 text-3xl lg:text-2xl font-mono'
+            variants={fadeIn}
+          >Email :</motion.label><br />
+          <motion.input
+            onChange={(e) => setEmail(e.target.value)}
+            name='user_email'
+            type="email"
+            id='email'
+            placeholder='email'
+            className='border-blue-900 bg-[#101420] text-[#c4c4c4] mx-2 mb-5 p-2 text-2xl font-mono rounded-xl lg:w-1/2'
+            variants={fadeIn}
+          /><br />
 
-                <ContactBtn ref={btnref} type='submit' onClick={(e)=>{
-                  gayab()
-                  sendEmail(e)             
-                }}/>
-            </form>
-        </div>
-    </div>
+          <motion.label
+            htmlFor="message"
+            className='mx-2 text-3xl lg:text-2xl font-mono'
+            variants={fadeIn}
+          >Message :</motion.label><br />
+          <motion.input
+            name='message'
+            type="text"
+            id='message'
+            placeholder='type something...'
+            className='border-blue-900 bg-[#101420] text-[#c4c4c4] mx-2 mb-5 p-2 text-3xl lg:text-2xl font-mono rounded-xl w-10/11 lg:w-1/2 h-fit'
+            variants={fadeIn}
+          /><br />
+
+          <motion.div variants={fadeIn}>
+            <ContactBtn ref={btnref} type='submit' onClick={(e) => {
+              gayab()
+              sendEmail(e)
+            }} />
+          </motion.div>
+        </form>
+      </motion.div>
+    </motion.div>
   )
 }
 

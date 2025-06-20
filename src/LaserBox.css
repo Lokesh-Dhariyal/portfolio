@@ -1,0 +1,34 @@
+
+.animated-border {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  
+  .animated-border::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: -25%;
+  top: -25%;
+  height: 150%;
+  width: 150%;
+    background: conic-gradient(
+      rgba(59, 130, 246, 0) 0deg,
+      rgba(59, 130, 246, 1) 300deg,
+      transparent 120deg
+    );
+    animation: spin-border 8s linear infinite;
+    filter: blur(10px);
+  }
+  
+  @keyframes spin-border {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
