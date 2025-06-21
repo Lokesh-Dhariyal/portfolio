@@ -5,17 +5,20 @@ function SkillLayout({ className = '' }) {
   const [skill, setSkill] = useState('EXPANDING LIBRARY')
 
   const skills = [
-    { name: 'REACT', icon: 'react' },
     { name: 'JAVASCRIPT', icon: 'js' },
-    { name: 'TAILWIND', icon: 'tailwind' },
-    { name: 'GIT', icon: 'git' },
-    { name: 'MONGODB', icon: 'mongodb' },
     { name: 'C++', icon: 'cpp' },
-    { name: 'GITHUB', icon: 'github' },
-    { name: 'NEXT.JS', icon: 'nextjs' },
+    { name: 'CSS', icon: 'css' },
+    { name: 'TAILWIND', icon: 'tailwind' },
     { name: 'VSCODE', icon: 'vscode' },
+    { name: 'TYPESCRIPT', icon: 'ts' },
+    { name: 'GIT', icon: 'git' },
+    { name: 'GITHUB', icon: 'github' },
+    { name: 'MONGODB', icon: 'mongodb' },
+    { name: 'EXPRESS', icon: 'express' },
+    { name: 'REACT', icon: 'react' },
     { name: 'NODE.JS', icon: 'nodejs' },
-    { name: 'EXPRESS', icon: 'express' }
+    { name: 'FIREBASE', icon: 'firebase' },
+    { name: 'NEXT.JS', icon: 'nextjs' },
   ]
 
   const fadeIn = {
@@ -57,7 +60,7 @@ function SkillLayout({ className = '' }) {
         {skills.map(({ name, icon }) => (
           <motion.div
             key={name}
-            className='border-2 border-blue-900 w-1/4 h-18 lg:h-22 rounded-3xl bg-[#101420] hover:cursor-pointer'
+            className='border-2 border-blue-900 w-2/7 h-18 lg:h-22 rounded-3xl bg-[#101420] hover:cursor-pointer'
             variants={fadeIn}
             whileHover={{ scale: 1.05 }}
             transition={{ type: 'spring', stiffness: 300 }}

@@ -64,7 +64,7 @@ function Experience() {
           <motion.p className='font-bold text-xl' variants={fadeIn}>
             2. Full Stack Projects 🚀
           </motion.p>
-          <motion.p variants={fadeIn}>- Built a full-stack social media platform called <strong>Staticgram</strong> and <strong>Batuni</strong>.</motion.p>
+          <motion.p variants={fadeIn}>- Built a full-stack social media and chat platform called <strong>Staticgram</strong> and <strong>Batuni</strong>.</motion.p>
           <motion.p variants={fadeIn}>- Implemented JWT authentication, infinite scrolling, user follow system, and real-time chat.</motion.p>
           <motion.p variants={fadeIn}>- Live demo and GitHub repo publicly available.</motion.p>
 

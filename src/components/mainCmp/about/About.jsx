@@ -7,11 +7,13 @@ function About() {
   const content3 = 'This project is made using JavaScript and pure CSS, this is a great project to learn about how to use good js.'
   const content4 = 'This project is made using react and Tailwind, i learned about the context api usecase and also react core.'
   const content5 = 'Full Stack project, made using react, axios and tailwind in frontend and mongoose, mongodb, express in backend'
+  const content6 = 'Full Stack project make for real time chatting by using webSocket(socket.io), build using MERN stack'
   const p1link = 'https://rokeshu-project4.vercel.app/'
   const p2link = 'https://rokeshu-project2.vercel.app/'
   const p3link = 'https://rokeshu-project3.vercel.app/'
   const p4link = 'https://lokesh-todo.vercel.app/'
   const p5link = 'https://staticgram.vercel.app/'
+  const p6link = `https://batuni.vercel.app/`
 
   const container = {
     hidden: {},
@@ -61,6 +63,20 @@ function About() {
                 proj='img/Pro5.png'
                 title='#Staticgram(Social media)'
                 content={content5}
+                icon1='https://skillicons.dev/icons?i=react'
+                icon2='https://skillicons.dev/icons?i=express'
+                icon3='https://skillicons.dev/icons?i=mongodb'
+              >
+              </BoxLayout>
+            </motion.div>
+
+            <motion.div variants={fadeInUp}>
+              <BoxLayout
+                className='relative overflow-auto'
+                link={p6link}
+                proj='img/Pro6.png'
+                title='#Batuni(Chat App)'
+                content={content6}
                 icon1='https://skillicons.dev/icons?i=react'
                 icon2='https://skillicons.dev/icons?i=express'
                 icon3='https://skillicons.dev/icons?i=mongodb'
