@@ -1,34 +1,83 @@
 
 .animated-border {
-    position: relative;
-    border-radius: 1rem;
-    overflow: hidden;
-  }
-  
-  .animated-border::before {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    left: -25%;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.animated-border::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: -25%;
   top: -25%;
   height: 150%;
   width: 150%;
-    background: conic-gradient(
-      rgba(59, 130, 246, 0) 0deg,
-      rgba(59, 130, 246, 1) 300deg,
-      transparent 120deg
-    );
-    animation: spin-border 8s linear infinite;
-    filter: blur(10px);
+  background: conic-gradient(
+    rgba(59, 130, 246, 0) 0deg,
+    rgba(139, 92, 246, 0.8) 90deg,
+    rgba(59, 130, 246, 1) 180deg,
+    rgba(6, 182, 212, 0.8) 270deg,
+    rgba(59, 130, 246, 0) 360deg
+  );
+  animation: spin-border 10s linear infinite;
+  filter: blur(8px);
+  opacity: 0.7;
+}
+
+.animated-border:hover::before {
+  animation-duration: 3s;
+  opacity: 1;
+  filter: blur(6px);
+}
+
+@keyframes spin-border {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  @keyframes spin-border {
-    0% {
-      transform: rotate(0deg);
-    }
-  
-    100% {
-      transform: rotate(360deg);
-    }
+  100% {
+    transform: rotate(360deg);
   }
-  
+}
+
+/* Enhanced glow effect */
+.animated-border::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: -10%;
+  top: -10%;
+  height: 120%;
+  width: 120%;
+  background: conic-gradient(
+    rgba(59, 130, 246, 0) 0deg,
+    rgba(139, 92, 246, 0.3) 90deg,
+    rgba(59, 130, 246, 0.5) 180deg,
+    rgba(6, 182, 212, 0.3) 270deg,
+    rgba(59, 130, 246, 0) 360deg
+  );
+  animation: spin-border 12s linear infinite reverse;
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.animated-border:hover::after {
+  opacity: 0.1;
+}
+
+/* Pulse effect for featured projects */
+@keyframes pulse-border {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+.animated-border.featured {
+  animation: pulse-border 4s ease-in-out infinite;
+}

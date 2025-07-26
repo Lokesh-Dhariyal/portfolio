@@ -40,7 +40,7 @@ function Connect() {
 
   return (
     <motion.div
-      className='lg:w-1/2 h-16 lg:h-35 flex mx-auto'
+      className='lg:w-3/4 h-16 lg:h-35 flex mx-auto'
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.3 }}

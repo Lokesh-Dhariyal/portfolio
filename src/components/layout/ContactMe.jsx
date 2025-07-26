@@ -84,27 +84,20 @@ function ContactMe() {
 
   return (
     <motion.div
-      className='lg:w-5/6 mx-auto mt-1 h-fit'
+      className='lg:w-5/6 mx-auto h-fit'
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.3 }}
       variants={fadeIn}
     >
       <motion.div
-        className='border-2 w-1/2 lg:w-1/3 ml-4 h-10 rounded-full border-blue-900 bg-[#101420] text-[#c4c4c4] pl-5 font-mono'
-        variants={fadeIn}
-      >
-        <strong className='text-2xl lg:text-3xl font-mono'>Contact Me</strong>
-      </motion.div>
-
-      <motion.div
-        className='border-2 border-blue-900 w-28/29 mx-auto mt-2 h-fit pt-10 px-5 rounded-2xl'
+        className='border-2 border-blue-900 w-28/29 mx-auto h-fit pt-10 px-5 backdrop-blur-xl rounded-2xl'
         variants={fadeIn}
       >
         <form ref={form} onSubmit={sendEmail}>
           <motion.label
             htmlFor="name"
-            className='mx-2 text-3xl lg:text-2xl font-mono'
+            className='mx-2 text-2xl font-mono'
             variants={fadeIn}
           >Name :</motion.label><br />
           <motion.input
@@ -112,13 +105,13 @@ function ContactMe() {
             type="text"
             id='name'
             placeholder='name'
-            className='border-blue-900 bg-[#101420] text-[#c4c4c4] mx-2 mb-5 p-2 text-3xl lg:text-2xl font-mono rounded-xl w-10/11 lg:w-1/2'
+            className='border-blue-900 bg-[#101420] text-[#c4c4c4] mx-2 mb-5 p-2 text-2xl font-mono rounded-xl w-10/11 lg:w-1/2'
             variants={fadeIn}
           /><br />
 
           <motion.label
             htmlFor="email"
-            className='mx-2 text-3xl lg:text-2xl font-mono'
+            className='mx-2 text-2xl font-mono'
             variants={fadeIn}
           >Email :</motion.label><br />
           <motion.input
@@ -133,7 +126,7 @@ function ContactMe() {
 
           <motion.label
             htmlFor="message"
-            className='mx-2 text-3xl lg:text-2xl font-mono'
+            className='mx-2 text-2xl font-mono'
             variants={fadeIn}
           >Message :</motion.label><br />
           <motion.input
@@ -141,7 +134,7 @@ function ContactMe() {
             type="text"
             id='message'
             placeholder='type something...'
-            className='border-blue-900 bg-[#101420] text-[#c4c4c4] mx-2 mb-5 p-2 text-3xl lg:text-2xl font-mono rounded-xl w-10/11 lg:w-1/2 h-fit'
+            className='border-blue-900 bg-[#101420] text-[#c4c4c4] mx-2 mb-5 p-2 text-2xl font-mono rounded-xl w-10/11 lg:w-1/2 h-fit'
             variants={fadeIn}
           /><br />
 
