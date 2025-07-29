@@ -146,7 +146,7 @@ function Start() {
       </div> */}
 
       <motion.div
-        className="relative z-20 text-white w-full lg:w-3/4 xl:w-2/3 mx-auto text-center pb-4"
+        className="relative z-20 text-white w-full lg:w-3/4 xl:w-2/3 mx-auto text-center pb-7 lg:pb-4"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

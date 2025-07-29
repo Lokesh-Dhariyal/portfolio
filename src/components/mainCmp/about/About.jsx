@@ -218,7 +218,7 @@ function About() {
 
         {/* Call to Action */}
         <motion.div 
-          className="text-center mt-5"
+          className="text-center mt-10"
 
         >
           <motion.button

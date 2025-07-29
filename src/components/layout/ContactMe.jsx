@@ -97,7 +97,7 @@ function ContactMe() {
         <form ref={form} onSubmit={sendEmail}>
           <motion.label
             htmlFor="name"
-            className='mx-2 text-2xl font-mono'
+            className='mx-2 lg:text-2xl font-mono'
             variants={fadeIn}
           >Name :</motion.label><br />
           <motion.input
@@ -105,13 +105,13 @@ function ContactMe() {
             type="text"
             id='name'
             placeholder='name'
-            className='border-blue-900 bg-[#101420] text-[#c4c4c4] mx-2 mb-5 p-2 text-2xl font-mono rounded-xl w-10/11 lg:w-1/2'
+            className='border-blue-900 bg-[#101420] text-[#c4c4c4] mx-2 mb-5 p-2 lg:text-2xl font-mono rounded-xl w-10/11 lg:w-1/2'
             variants={fadeIn}
           /><br />
 
           <motion.label
             htmlFor="email"
-            className='mx-2 text-2xl font-mono'
+            className='mx-2 lg:text-2xl font-mono'
             variants={fadeIn}
           >Email :</motion.label><br />
           <motion.input
@@ -120,13 +120,13 @@ function ContactMe() {
             type="email"
             id='email'
             placeholder='email'
-            className='border-blue-900 bg-[#101420] text-[#c4c4c4] mx-2 mb-5 p-2 text-2xl font-mono rounded-xl lg:w-1/2'
+            className='border-blue-900 bg-[#101420] text-[#c4c4c4] mx-2 mb-5 p-2 lg:text-2xl font-mono rounded-xl lg:w-1/2'
             variants={fadeIn}
           /><br />
 
           <motion.label
             htmlFor="message"
-            className='mx-2 text-2xl font-mono'
+            className='mx-2 lg:text-2xl font-mono'
             variants={fadeIn}
           >Message :</motion.label><br />
           <motion.input
@@ -134,7 +134,7 @@ function ContactMe() {
             type="text"
             id='message'
             placeholder='type something...'
-            className='border-blue-900 bg-[#101420] text-[#c4c4c4] mx-2 mb-5 p-2 text-2xl font-mono rounded-xl w-10/11 lg:w-1/2 h-fit'
+            className='border-blue-900 bg-[#101420] text-[#c4c4c4] mx-2 mb-5 p-2 lg:text-2xl font-mono rounded-xl w-10/11 lg:w-1/2 h-fit'
             variants={fadeIn}
           /><br />
 

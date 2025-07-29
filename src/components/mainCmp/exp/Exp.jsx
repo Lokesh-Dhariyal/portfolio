@@ -64,16 +64,18 @@ function Exp() {
           className='grid lg:grid-cols-2 gap-5 items-start'
           variants={fadeIn}
         >
+          {/* Experience Section */}
+          <motion.div variants={fadeIn}>
+            <Experience />
+          </motion.div>
+          
           {/* Skills Section */}
           <motion.div variants={fadeIn}>
             <SkillLayout />
           </motion.div>
 
-          {/* Experience Section */}
-          <motion.div variants={fadeIn}>
-            <Experience />
-          </motion.div>
         </motion.div>
+
 
         {/* Additional Stats Section */}
         <motion.div 
